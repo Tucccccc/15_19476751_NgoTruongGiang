@@ -3,7 +3,7 @@ import { View, Text, Image, TouchableOpacity, SafeAreaView, FlatList, ActivityIn
 
 const scrImage = require("../assets/screen2_head.png");
 
-export default function Screen2() {
+export default function Screen2({ navigation }) {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -28,13 +28,19 @@ export default function Screen2() {
   renderItem = ({ item, index }) => {
     return (
       <View>
-        <View style={{marginLeft: '10%'}}>
-          <Image style={{ width: 150, height: 150 }} source={{ uri: item.image }}></Image>
-        </View>
+        <TouchableOpacity onPress={() => { navigation.navigate('Screen3', { data: item })}}>
+          <View style={{ marginLeft: '10%' }}>
+            <Image style={{ width: 150, height: 150 }} source={{ uri: item.image }}></Image>
+          </View>
 
-        <View style={{alignItems: 'center'}}>
-          <Text>{item.price}</Text>
-        </View>
+          <View style={{ alignItems: 'center' }}>
+            <Text>{item.name}</Text>
+          </View>
+
+          <View style={{ alignItems: 'center' }}>
+            <Text>{item.price}</Text>
+          </View>
+        </TouchableOpacity>
       </View>
     )
   }
