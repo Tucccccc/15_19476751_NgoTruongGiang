@@ -5,7 +5,7 @@ import { useRoute } from '@react-navigation/native';
 export default function Screen3() {
     const route = useRoute();
 
-    const urlImage = "https://res.cloudinary.com/ddsr6mcq4/image/upload/v1670981513/started_hat_1_rrg0ag.png";
+    const urlImage = 'https://res.cloudinary.com/ddsr6mcq4/image/upload/v1670981513/started_hat_1_rrg0ag.png';
     var [linkImage, setLinkImage] = new useState(urlImage);
     var [name, setName] = new useState("");
 
