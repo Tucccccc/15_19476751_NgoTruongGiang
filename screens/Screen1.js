@@ -28,7 +28,7 @@ const FadeInView = (props) => {
 }
 const scrImage = require("../assets/hat.png");
 
-export default function Screen1() {
+export default function Screen1({navigation}) {
   return (
     <View style={{ display: 'flex', flexDirection: 'column', width: '100%', height: '100%', backgroundColor: '#f5f5dc' }}>
       <View style={{ marginLeft: 'auto', marginRight: 'auto', marginTop: '30%', alignItems: 'center' }}>
@@ -39,7 +39,7 @@ export default function Screen1() {
           <Text style={{fontSize: 26, textAlign: 'center'}}>A prenium online store for women and their stylish choice</Text>
         </View>
         <View style={{marginTop: '5%', marginLeft: 'auto', marginRight: 'auto', backgroundColor: '#696969', width: 300, height: 50, borderRadius: 18, alignItems: 'center'}}>
-          <TouchableOpacity style={{marginTop: 'auto', marginBottom: 'auto'}}>
+          <TouchableOpacity style={{marginTop: 'auto', marginBottom: 'auto'}} onPress={() => navigation.navigate('Screen2')}>
             <Text style={{color: '#f0f8ff', fontSize: 18}}>Get Started</Text>
           </TouchableOpacity>
         </View>
